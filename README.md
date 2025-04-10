@@ -1,14 +1,12 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+In this project I took already existing code and refactored it to make it better. I used a constructor class to accomplish this.
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+This to dapp allows someone to enter tasks with a date for completion. It also allows for checking off completed tasks or even deleting them as well.
 
 ## Technology
-
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
 
 ## Deployment
 

@@ -12,4 +12,4 @@ This to dapp allows someone to enter tasks with a date for completion. It also a
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
+- [ADD LINK HERE](https://tstacy15.github.io/se_project_todo-app/)

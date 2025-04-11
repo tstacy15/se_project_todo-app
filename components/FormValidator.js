@@ -13,7 +13,7 @@ class FormValidator {
     const errorElement = this._formEl.querySelector(errorElementId);
     inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(settings.errorClass);
+    errorElement.classList.add(this._errorClass);
   };
 
   _hideInputError = (inputElement) => {
@@ -45,6 +45,19 @@ class FormValidator {
       this._buttonElement.disabled = false;
     }
   };
+
+  resetValidation() {
+    // Resets the form
+    this._formEl.reset();
+
+    // Hides all input errors
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+    });
+
+    // Disables the submit button
+    this._toggleButtonState();
+  }
 
   _setEventListeners() {
     this._inputList = Array.from(

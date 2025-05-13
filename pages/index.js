@@ -15,6 +15,11 @@ const todosList = document.querySelector(".todos__list");
 //instantiating todocounter, then select the countet text element(selecting with query selector right above)
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
+const renderTodo = (item) => {
+  const todo = generateTodo(item);
+  section.addItem(todo);
+};
+
 const addTodoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
   handleFormSubmit: (inputValues) => {
@@ -25,10 +30,9 @@ const addTodoPopup = new PopupWithForm({
     date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
     const id = uuidv4();
     const values = { name, date, id };
-    const todo = generateTodo(values);
-    todosList.append(todo);
+    renderTodo(values); // just one line of code instead of the 2 lines
     todoCounter.updateTotal(true);
-    closeModal(addTodoPopupEl);
+    addTodoPopup.close();
     newTodoValidator.resetValidation();
   },
 });
@@ -59,10 +63,7 @@ const section = new Section({
   items: initialTodos, //passing intial todos
   renderer: (item) => {
     //generationg todo item
-    const todoElement = generateTodo(item);
-    //adding to todo list
-    //todosList.append(todo);
-    section.addItem(todoElement);
+    renderTodo(item);
   },
   containerSelector: ".todos__list",
 });
